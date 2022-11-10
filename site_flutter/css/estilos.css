@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    align-content: center;
+    align-self: center;
     width: 100vh;
     height: 200vw;
     background: linear-gradient(45deg, #002E94, #083AA9, #5DA7DB, #5837D0);
@@ -24,12 +26,66 @@
 
 }
 
+
 .cabecalho {
+    display: flex;
+    align-items: center;
+    align-content: center;
     background: rgb(77, 77, 77);
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 10vh;
+    left: 4.4%;
+    width: 90vw;
+    height: 13vh;
+    border-radius: 10px;
+    justify-content: space-around;
+}
 
+.button {
+    text-align: center;
+    align-self: center;
+}
+
+#textoDoc {
+    top: 10;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 20px;
+
+}
+
+.menu a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menuDoc {
+    text-decoration: none;
+}
+
+.menuDes {
+    text-decoration: none;
+}
+
+#textDes {
+    top: 10;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+#textDocument {
+    top: 10;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
 }
