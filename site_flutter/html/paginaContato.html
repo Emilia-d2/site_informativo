@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="icon" href="../img/fvicon.png" type="image/png">
-    <link rel="stylesheet" href="../js/function.js">
     <title>Contato Flutter</title>
 </head>
 
-<body class="body">
+<body class="bodyContato">
+
 
     <header class="cabecalho">
         <div class="imagem">
@@ -26,38 +26,122 @@
         </div>
     </header>
 
+    <div class="container">
+        <div class="box">
+            <div>
+                <h3 class="tittle">Coloque seus dados e em breve entraremos em contato!</h3>
+            </div>
 
-    <div class="box">
-        <br>
 
-        <div>
-            <h2 class="tittle">Faça seu cadastro</h2>
+            <div class="form">
+                <label id="lblNome" for="nome" style="font-weight: bold;">Nome completo<label><br>
+                        <input id="nome" type="text" name="nome" placeholder="Informe seu nome completo">
+            </div>
+
+            <div class="form">
+                <label id="lblCpf" for="cpf" style="font-weight: bold;">CPF<label><br>
+                        <input id="cpf" type="number" name="cpf" placeholder="Informe seu CPF">
+            </div>
+
+            <div class="form">
+                <label id="lblTelefone" for="telefone" style="font-weight: bold;">Telefone para contato<label><br>
+                        <input id="telefone" type="number" name="telefone" placeholder="Informe seu telefone">
+            </div>
+
+            <div class="form">
+                <label id="lblEmail" for="email" style="font-weight: bold;">E-mail<label><br>
+                        <input id="email" type="email" name="email" placeholder="Informe seu E-mail">
+            </div>
+
+            <div class="form">
+                <h3 style="font-weight: bold;">Gostaria de receber nossas
+                    notificações?</h3>
+            </div>
+
+            <div class="form">
+                <label id="lblCheckboxSim" for="checkboxSim" style="font-weight: bold;">Sim<label>
+                        <input id="checkboxSim" type="checkbox" name="checkboxSim">
+                        <label id="lblCheckboxNao" for="checkboxNao" style="font-weight: bold;">Não<label>
+                                <input id="checkboxNao" type="checkbox" name="checkboxNao">
+            </div>
+
+            <br>
+
+            <div class="botoes">
+                <input id="btn_enviar" type="button" value="Enviar" onclick="Validar()">
+                <input id="btn_limpar" type="button" value="Limpar" onclick="Limpar()">
+            </div>
+
         </div>
-
-        <br>
-
-        <div class="form">
-            <label id="lblEmail" for="email" style="font-weight: bold;">E-mail:<label><br>
-                    <input id="email" type="text" name="email" placeholder="Informe seu e-mail">
-        </div>
-
-        <div class="form">
-            <label id="lblSenha" for="senha" style="font-weight: bold;">Senha:<label><br>
-                    <input id="senha" type="password" name="senha" placeholder="Informe sua senha">
-        </div>
-
-        <br>
-
-        <div class="botoes">
-            <input id="btn_enviar" type="button" value="Enviar">
-            <input id="btn_limpar" type="button" value="Limpar">
-        </div>
-
     </div>
+
+
+
+
 
 
 </body>
 
+
+
 </html>
+
+<script type="text/javascript">
+
+    function Validar() {
+        var nome = document.getElementById("nome");
+        var cpf = document.getElementById("cpf");
+        var telefone = document.getElementById("telefone");
+        var email = document.getElementById("email");
+        if (nome.value != nome) {
+            alert("Verifique seus dados se estão completos!");
+            nome.focus();
+        }
+        else if (cpf.value != cpf) {
+            alert("Verifique seus dados se estão completos!");
+            cpf.focus();
+        }
+        else if (telefone.value != telefone) {
+            alert("Verifique seus dados se estão completos!");
+            telefone.focus();
+        }
+        else if (email.value != email) {
+            alert("Verifique seus dados se estão completos!");
+            email.focus();
+        }
+        else {
+            alert("Dados enviados com sucesso");
+        }
+    };
+
+    function Limpar() {
+        var nome = document.getElementById("nome");
+        var cpf = document.getElementById("cpf");
+        var telefone = document.getElementById("telefone");
+        var email = document.getElementById("email");
+
+        if (nome.value != nome) {
+            nome.value = "";
+            alert("Os dados foram limpos com sucesso");
+        }
+        else if (cpf.value == cpf) {
+            cpf.value = 0;
+            alert("Os dados foram limpos com sucesso");
+        }
+        else if (telefone.value != telefone) {
+            telefone.value = 0;
+            alert("Os dados foram limpos com sucesso");
+        }
+        else if (email.value != email) {
+            email.value = "";
+            alert("Os dados foram limpos com sucesso");
+        }
+        else {
+            alert("Os dados já estão limpos, se quiser já pode preencher os campos!");
+        }
+
+    }
+
+</script>
 
 </html>
