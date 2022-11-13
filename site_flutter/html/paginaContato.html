@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/paginaContato.css">
     <link rel="icon" href="../img/fvicon.png" type="image/png">
     <title>Contato Flutter</title>
 </head>
@@ -45,7 +45,7 @@
 
             <div class="form">
                 <label id="lblTelefone" for="telefone" style="font-weight: bold;">Telefone para contato<label><br>
-                        <input id="telefone" type="number" name="telefone" placeholder="Informe seu telefone">
+                        <input id="telefone" type="tel" name="telefone" placeholder="Informe seu telefone">
             </div>
 
             <div class="form">
@@ -60,7 +60,7 @@
 
             <div class="form">
                 <label id="lblCheckboxSim" for="checkboxSim" style="font-weight: bold;">Sim<label>
-                        <input id="checkboxSim" type="checkbox" name="checkboxSim">
+                        <input id="checkboxSim" type="checkbox" name="checkboxSim" indeterminate>
                         <label id="lblCheckboxNao" for="checkboxNao" style="font-weight: bold;">Não<label>
                                 <input id="checkboxNao" type="checkbox" name="checkboxNao">
             </div>
@@ -93,6 +93,8 @@
         var cpf = document.getElementById("cpf");
         var telefone = document.getElementById("telefone");
         var email = document.getElementById("email");
+        var checkSim = document.getElementById("checkboxSim");
+        var checkNao = document.getElementById("checkboxNao");
         if (nome.value != nome) {
             alert("Verifique seus dados se estão completos!");
             nome.focus();
@@ -108,6 +110,10 @@
         else if (email.value != email) {
             alert("Verifique seus dados se estão completos!");
             email.focus();
+        }
+        else if (checkSim.value != checkSim || checkNao.value != checkNao) {
+            alert("Verifique seus dados se estão completos!");
+
         }
         else {
             alert("Dados enviados com sucesso");

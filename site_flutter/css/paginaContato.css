@@ -1,0 +1,183 @@
+.bodyContato {
+    margin: 0px;
+    position: fixed;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: rgb(77, 77, 77);
+    position: fixed;
+    top: 0;
+    left: 4.4%;
+    width: 90vw;
+    height: 13vh;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.menuPaginas a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 55vw;
+    background: linear-gradient(45deg, #002E94, #083AA9, #5DA7DB, #5837D0);
+    background-size: 300%, 300%;
+    animation: colors 15s ease infinite;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    width: 370px;
+    height: 470px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+#textoContato {
+    top: 10;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+#textoDesenvolvimento {
+    top: 10;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+#textoDocumentacao {
+    top: 10;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+#textoReferencia {
+    top: 10;
+    text-align: center;
+    display: inline-block;
+    margin: 0px 20px;
+    color: white;
+    font-size: 16px;
+}
+
+.tittle {
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+}
+
+#email {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
+#cpf {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
+#telefone {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
+#checkbox {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
+#nome {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
+#btn_enviar {
+    border-radius: 10px;
+    background-color: rgb(161, 161, 234);
+    border-color: blue;
+    width: 70px;
+    height: 30px;
+    margin-right: 16px;
+}
+
+#btn_limpar {
+    border-radius: 10px;
+    background-color: rgb(161, 161, 234);
+    border-color: blue;
+    width: 70px;
+    height: 30px;
+    margin-left: 16px;
+}
+
+.botoes {
+    text-align: center;
+
+}
+
+#lblCheckboxSim {
+    text-align: center;
+    margin-right: 20px;
+}
+
+#lblCheckboxNao {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.paginas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    left: 50px;
+    color: white;
+    font-family: sans-serif;
+
+}
