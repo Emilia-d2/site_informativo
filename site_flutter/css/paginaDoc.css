@@ -1,9 +1,11 @@
 .body {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    align-self: center;
+    margin: 24px;
+    margin-top: 130px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-self: flex-start;
     width: 100vh;
     height: 200vw;
     background: linear-gradient(45deg, #002E94, #083AA9, #5DA7DB, #5837D0);
@@ -85,12 +87,38 @@
 
 .paginas {
     display: flex;
+    text-align: start;
+    align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 100px;
-    left: 50px;
     color: white;
     font-family: sans-serif;
 
+}
+
+.tituloInicialDoc {
+    margin-left: 283px;
+}
+
+.requesitos {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: 160px;
+    margin-top: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 90px);
+}
+
+.requesitoTexto {
+    margin: 50px;
+}
+
+.requesitoTextoLista {
+    margin: 25px;
+    width: 280px;
+}
+
+.tituloInicializa {
+    margin-top: 50px;
+    margin-left: 190px;
 }
