@@ -35,22 +35,25 @@
 
             <div class="form">
                 <label id="lblNome" for="nome" style="font-weight: bold;">Nome completo<label><br>
-                        <input id="nome" type="text" name="nome" placeholder="Informe seu nome completo">
+                        <input id="nome" type="text" name="nome" size="52" maxlength="80"
+                            placeholder="Informe seu nome completo">
             </div>
 
             <div class="form">
                 <label id="lblCpf" for="cpf" style="font-weight: bold;">CPF<label><br>
-                        <input id="cpf" type="number" name="cpf" placeholder="Informe seu CPF">
+                        <input id="cpf" type="number" name="cpf" size="52" maxlength="11" placeholder="Informe seu CPF">
             </div>
 
             <div class="form">
                 <label id="lblTelefone" for="telefone" style="font-weight: bold;">Telefone para contato<label><br>
-                        <input id="telefone" type="tel" name="telefone" placeholder="Informe seu telefone">
+                        <input id="telefone" type="tel" name="telefone" size="52" maxlength="11"
+                            placeholder="Informe seu telefone">
             </div>
 
             <div class="form">
                 <label id="lblEmail" for="email" style="font-weight: bold;">E-mail<label><br>
-                        <input id="email" type="email" name="email" placeholder="Informe seu E-mail">
+                        <input id="email" type="email" name="email" size="52" maxlength="150"
+                            placeholder="Informe seu E-mail">
             </div>
 
             <div class="form">
@@ -96,23 +99,23 @@
         var checkSim = document.getElementById("checkboxSim");
         var checkNao = document.getElementById("checkboxNao");
         if (nome.value != nome) {
-            alert("Verifique seus dados se estão completos!");
+            alert("Verifique se seu nome está completo!");
             nome.focus();
         }
-        else if (cpf.value != cpf) {
-            alert("Verifique seus dados se estão completos!");
+        if (cpf.value != cpf) {
+            alert("Verifique seu CPF!");
             cpf.focus();
         }
-        else if (telefone.value != telefone) {
-            alert("Verifique seus dados se estão completos!");
+        if (telefone.value != telefone) {
+            alert("Verifique seu telefone para contato!");
             telefone.focus();
         }
-        else if (email.value != email) {
-            alert("Verifique seus dados se estão completos!");
+        if (email.value != email) {
+            alert("Verifique se seu e-mail está correto!");
             email.focus();
         }
-        else if (checkSim.value != checkSim || checkNao.value != checkNao) {
-            alert("Verifique seus dados se estão completos!");
+        if (checkSim.value != checkSim || checkNao.value != checkNao) {
+            alert("Marque alguma opção para receber nossas notificações!");
 
         }
         else {
@@ -130,15 +133,15 @@
             nome.value = "";
             alert("Os dados foram limpos com sucesso");
         }
-        else if (cpf.value == cpf) {
+        if (cpf.value != cpf) {
             cpf.value = 0;
             alert("Os dados foram limpos com sucesso");
         }
-        else if (telefone.value != telefone) {
+        if (telefone.value != telefone) {
             telefone.value = 0;
             alert("Os dados foram limpos com sucesso");
         }
-        else if (email.value != email) {
+        if (email.value != email) {
             email.value = "";
             alert("Os dados foram limpos com sucesso");
         }
