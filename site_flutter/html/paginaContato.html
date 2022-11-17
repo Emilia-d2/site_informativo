@@ -11,8 +11,6 @@
 </head>
 
 <body class="bodyContato">
-
-
     <header class="cabecalho">
         <div class="imagem">
             <a href="../site_index.html"><img src="../img/flutter_icon.png" alt="imagemFlutter" width="155px"
@@ -32,123 +30,163 @@
                 <h3 class="tittle">Coloque seus dados e em breve entraremos em contato!</h3>
             </div>
 
+            <form action="#">
+                <div class="form">
+                    <label id="lblNome" for="nome" style="font-weight: bold;">Nome completo<label><br>
+                            <input id="nome" type="text" name="nome" size="52" maxlength="80" pattern="([aA-zZ]+)"
+                                placeholder="Informe seu nome completo" class="nomeCompleto">
+                </div>
 
-            <div class="form">
-                <label id="lblNome" for="nome" style="font-weight: bold;">Nome completo<label><br>
-                        <input id="nome" type="text" name="nome" size="52" maxlength="80"
-                            placeholder="Informe seu nome completo">
-            </div>
+                <div class="form">
+                    <label id="lblEmail" for="email" style="font-weight: bold;">E-mail<label><br>
+                            <input id="email" type="email" name="email" size="52" maxlength="150"
+                                placeholder="example@example.com">
+                </div>
 
-            <div class="form">
-                <label id="lblCpf" for="cpf" style="font-weight: bold;">CPF<label><br>
-                        <input id="cpf" type="number" name="cpf" size="52" maxlength="11" placeholder="Informe seu CPF">
-            </div>
+                <div class="form">
+                    <label id="lblCpf" for="cpf" style="font-weight: bold;">CPF<label><br>
+                            <input id="cpf" type="number" name="cpf" size="52" maxlength="11"
+                                placeholder="Informe seu CPF">
+                </div>
 
-            <div class="form">
-                <label id="lblTelefone" for="telefone" style="font-weight: bold;">Telefone para contato<label><br>
-                        <input id="telefone" type="tel" name="telefone" size="52" maxlength="11"
-                            placeholder="Informe seu telefone">
-            </div>
+                <div class="form">
+                    <label id="lblTelefone" for="telefone" style="font-weight: bold;">Telefone para contato<label><br>
+                            <input id="telefone" type="tel" name="telefone" size="52" maxlength="11"
+                                placeholder="Informe seu telefone">
+                </div>
 
-            <div class="form">
-                <label id="lblEmail" for="email" style="font-weight: bold;">E-mail<label><br>
-                        <input id="email" type="email" name="email" size="52" maxlength="150"
-                            placeholder="Informe seu E-mail">
-            </div>
+                <div class="form">
+                    <label id="lblDataNasc" for="dataNasc" style="font-weight: bold;">Data de nascimento<label><br>
+                            <input id="dataNasc" type="date" name="dataNasc" size="52" placeholder="01/12/0000">
+                </div>
 
-            <div class="form">
-                <h3 style="font-weight: bold;">Gostaria de receber nossas
-                    notificações?</h3>
-            </div>
+                <br>
 
-            <div class="form">
-                <label id="lblCheckboxSim" for="checkboxSim" style="font-weight: bold;">Sim<label>
-                        <input id="checkboxSim" type="checkbox" name="checkboxSim" indeterminate>
-                        <label id="lblCheckboxNao" for="checkboxNao" style="font-weight: bold;">Não<label>
-                                <input id="checkboxNao" type="checkbox" name="checkboxNao">
-            </div>
+                <div class="botoes">
+                    <input id="btn_enviar" type="button" value="Enviar" onclick="Validar()">
+                    <input id="btn_limpar" type="button" value="Limpar" onclick="Limpar()">
+                </div>
+            </form>
 
-            <br>
-
-            <div class="botoes">
-                <input id="btn_enviar" type="button" value="Enviar" onclick="Validar()">
-                <input id="btn_limpar" type="button" value="Limpar" onclick="Limpar()">
-            </div>
 
         </div>
     </div>
 
 
-
-
-
-
 </body>
-
-
 
 </html>
 
 <script type="text/javascript">
 
     function Validar() {
-        var nome = document.getElementById("nome");
-        var cpf = document.getElementById("cpf");
-        var telefone = document.getElementById("telefone");
-        var email = document.getElementById("email");
-        var checkSim = document.getElementById("checkboxSim");
-        var checkNao = document.getElementById("checkboxNao");
-        if (nome.value != nome) {
+        var nome = "";
+        var cpf = 0;
+        var telefone = 0;
+        var email = "";
+        var dataNasc = "";
+
+        //validação para nao poder usar letras no nome
+        let inputNome = document.querySelector(".nomeCompleto");
+        inputNome.addEventListener("keydown", function (e) {
+            if (e.key > "0" && e.key < "9") {
+                e.preventDefault();
+            }
+        });
+
+        if (document.getElementById("nome").value == nome) {
             alert("Verifique se seu nome está completo!");
             nome.focus();
         }
-        if (cpf.value != cpf) {
+        if (document.getElementById("cpf").value == cpf) {
             alert("Verifique seu CPF!");
             cpf.focus();
         }
-        if (telefone.value != telefone) {
+        let value_cpf = document.querySelector('#cpf');
+
+        value_cpf.addEventListener("keydown", function (e) {
+            if (e.key > "a" && e.key < "z") {
+                e.preventDefault();
+            }
+        });
+        value_cpf.addEventListener("blur", function (e) {
+            //Remove tudo o que não é dígito
+            let validar_cpf = this.value.replace(/\D/g, "");
+
+            //verificação da quantidade números
+            if (validar_cpf.length == 11) {
+
+                // verificação de CPF valido
+                var Soma;
+                var Resto;
+
+                Soma = 0;
+                for (i = 1; i <= 9; i++) Soma = Soma + parseInt(validar_cpf.substring(i - 1, i)) * (11 - i);
+                Resto = (Soma * 10) % 11;
+
+                if ((Resto == 10) || (Resto == 11)) Resto = 0;
+                if (Resto != parseInt(validar_cpf.substring(9, 10))) return alert("CPF Inválido!");;
+
+                Soma = 0;
+                for (i = 1; i <= 10; i++) Soma = Soma + parseInt(validar_cpf.substring(i - 1, i)) * (12 - i);
+                Resto = (Soma * 10) % 11;
+
+                if ((Resto == 10) || (Resto == 11)) Resto = 0;
+                if (Resto != parseInt(validar_cpf.substring(10, 11))) return alert("CPF Inválido!");;
+
+                //formatação final
+                cpf_final = validar_cpf.replace(/(\d{3})(\d)/, "$1.$2");
+                cpf_final = cpf_final.replace(/(\d{3})(\d)/, "$1.$2");
+                cpf_final = cpf_final.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+                document.getElementById('campo_cpf').value = cpf_final;
+
+            } else {
+                alert("CPF Inválido! É esperado 11 dígitos numéricos.")
+            }
+
+        })
+        if (document.getElementById("telefone").value == telefone) {
             alert("Verifique seu telefone para contato!");
             telefone.focus();
         }
-        if (email.value != email) {
+        // telefone
+        let campo_celular = document.querySelector('#telefone');
+
+        campo_celular.addEventListener("blur", function (e) {
+            //Remove tudo o que não é dígito
+            let celular = this.value.replace(/\D/g, "");
+
+            if (celular.length == 11) {
+                celular = celular.replace(/^(\d{2})(\d)/g, "($1) $2");
+                resultado_celular = celular.replace(/(\d)(\d{4})$/, "$1-$2");
+                document.getElementById('telefone').value = resultado_celular;
+            }
+        })
+        if (document.getElementById("email").value == email) {
             alert("Verifique se seu e-mail está correto!");
             email.focus();
         }
-        if (checkSim.value != checkSim || checkNao.value != checkNao) {
-            alert("Marque alguma opção para receber nossas notificações!");
-
+        if (document.getElementById("dataNasc").value == dataNasc) {
+            alert("Verifique se sua data de nascimento está correta!");
+            dataNasc.focus();
         }
         else {
+            document.getElementById("nome").value = '';
+            document.getElementById("cpf").value = '';
+            document.getElementById("telefone").value = '';
+            document.getElementById("email").value = '';
+            document.getElementById("dataNasc").value = '';
             alert("Dados enviados com sucesso");
         }
     };
 
     function Limpar() {
-        var nome = document.getElementById("nome");
-        var cpf = document.getElementById("cpf");
-        var telefone = document.getElementById("telefone");
-        var email = document.getElementById("email");
-
-        if (nome.value != nome) {
-            nome.value = "";
-            alert("Os dados foram limpos com sucesso");
-        }
-        if (cpf.value != cpf) {
-            cpf.value = 0;
-            alert("Os dados foram limpos com sucesso");
-        }
-        if (telefone.value != telefone) {
-            telefone.value = 0;
-            alert("Os dados foram limpos com sucesso");
-        }
-        if (email.value != email) {
-            email.value = "";
-            alert("Os dados foram limpos com sucesso");
-        }
-        else {
-            alert("Os dados já estão limpos, se quiser já pode preencher os campos!");
-        }
-
+        document.getElementById("nome").value = '';
+        document.getElementById("cpf").value = '';
+        document.getElementById("telefone").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("dataNasc").value = '';
+        alert("Os dados foram limpos com sucesso!")
     }
 
 </script>

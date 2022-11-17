@@ -153,6 +153,15 @@
     border-radius: 10px;
 }
 
+#dataNasc {
+    text-align: start;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    background: #ddd7d7;
+    border-radius: 10px;
+}
+
 #btn_enviar {
     border-radius: 10px;
     background-color: rgb(161, 161, 234);
@@ -176,15 +185,6 @@
 
 }
 
-#lblCheckboxSim {
-    text-align: center;
-    margin-right: 20px;
-}
-
-#lblCheckboxNao {
-    text-align: center;
-    margin-left: 20px;
-}
 
 .paginas {
     display: flex;
